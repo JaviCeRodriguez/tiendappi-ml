@@ -1,15 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-function Search() {
+function Search(props) {
+    const [article, setArticle] = useState("");
+
+    function handleChange(e) {
+        const { value } = e.target;
+        setArticle(value);
+    }
+
+    function handleClick() {
+        props.callback(article);
+    }
+
     return (
         <section className="search">
-            <img
-                src="https://http2.mlstatic.com/ui/navigation/4.4.4/mercadolibre/logo__large_plus@2x.png"
-                alt="logo"
-            />
+            <Link to="/">
+                <img
+                    src="https://http2.mlstatic.com/ui/navigation/4.4.4/mercadolibre/logo__large_plus@2x.png"
+                    alt="logo"
+                />
+            </Link>
             <div>
-                <input type="text" placeholder="Buscar producto..." />
-                <button>Buscar</button>
+                <input
+                    type="text"
+                    placeholder="Buscar producto..."
+                    onChange={handleChange}
+                />
+                <button onClick={handleClick}>Buscar</button>
             </div>
         </section>
     );
