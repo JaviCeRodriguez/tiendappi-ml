@@ -6,7 +6,12 @@ function Country(props) {
 
     return (
         <Link to={`/carousel/${code}`}>
-            <img src={`../../../images/${flag}.png`} alt="flag" /> / {country}
+            <img
+                src={`https://raw.githubusercontent.com/JaviCeRodriguez/tiendappi-ml/main/src/images/${flag}.png`}
+                alt="flag"
+                className="flag"
+            />{" "}
+            {country}
         </Link>
     );
 }
