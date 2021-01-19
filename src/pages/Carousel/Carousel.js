@@ -1,5 +1,7 @@
 import React from "react";
 import Error from "../../components/Error/Error";
+import Shop from "../../components/Shop/Shop";
+import "./Carousel.css";
 import arrCountries from "../../countries.json";
 import { useParams } from "react-router-dom";
 
@@ -15,7 +17,7 @@ function Carousel() {
     if (filterId.length === 0) {
         return <Error errorValue="404" />;
     } else {
-        return <>Pass</>;
+        return <Shop zoneValue={id} />;
     }
 }
 
