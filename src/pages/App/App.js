@@ -1,30 +1,9 @@
 import React from "react";
 import Country from "../../components/Country/Country";
+import arrCountries from "../../countries.json";
 import "./App.css";
 
 function App() {
-    const arrCountries = [
-        {
-            country: "Argentina",
-            code: "MLA",
-            flag: "asad",
-        },
-        {
-            country: "Bolivia",
-            code: "MBO",
-            flag: "asad",
-        },
-        {
-            country: "Brasil",
-            code: "MLB",
-            flag: "asad",
-        },
-        {
-            country: "Colombia",
-            code: "MCO",
-            flag: "asad",
-        },
-    ];
     return (
         <ul>
             {arrCountries.map((value, key) => {
