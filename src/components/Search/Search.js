@@ -1,18 +1,21 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Button from "../Button/Button";
+import Input from "../Input/Input";
+
+let article = "";
 
 function Search(props) {
-    const [article, setArticle] = useState("");
-
-    function handleChange(e) {
-        const { value } = e.target;
-        setArticle(value);
+    function reciveInput(dataInput) {
+        article = dataInput;
     }
 
-    function handleClick() {
+    function reciveClick() {
+        sendArticle();
+    }
+
+    function sendArticle() {
         props.callback(article);
     }
-
     return (
         <section className="search">
             <Link to="/">
@@ -22,12 +25,8 @@ function Search(props) {
                 />
             </Link>
             <div>
-                <input
-                    type="text"
-                    placeholder="Buscar producto..."
-                    onChange={handleChange}
-                />
-                <button onClick={handleClick}>Buscar</button>
+                <Input inputCallback={reciveInput} />
+                <Button clickCallback={reciveClick} />
             </div>
         </section>
     );
