@@ -12,13 +12,11 @@ function App() {
                 className="logoApp"
             ></img>
             <ul>
-                {arrCountries.map((value, key) => {
-                    return (
-                        <li>
-                            <Country value={value} key={key} />
-                        </li>
-                    );
-                })}
+                {arrCountries.map((value, key) => (
+                    <li>
+                        <Country value={value} key={key} />
+                    </li>
+                ))}
             </ul>
         </section>
     );
