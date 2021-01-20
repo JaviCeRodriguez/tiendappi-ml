@@ -1,11 +1,16 @@
 import React from "react";
 
-function Card() {
+function Card(props) {
+    const { title, thumbail, price, permalink } = props;
     return (
-        <div>
-            <h3>Producto invisible</h3>
-            <label>Descripcion</label>
-            <label>Precio</label>
+        <div className="card">
+            <a href={permalink} alt={title}>
+                <img src={thumbail} alt={title} />
+                <div>
+                    <label>$ {price}</label>
+                    <h4>{title}</h4>
+                </div>
+            </a>
         </div>
     );
 }

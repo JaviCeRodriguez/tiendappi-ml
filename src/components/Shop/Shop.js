@@ -12,7 +12,6 @@ function Shop() {
         const getProduct = await fetch(requestURL);
         const getJSON = await getProduct.json();
 
-        console.log(requestURL);
         setProducts(getJSON);
     }
 
